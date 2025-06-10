@@ -1,4 +1,4 @@
-# Born2BeRoot 🛡️
+# Born2BeRoot 💻
 
 *A 42 School project to deploy a secure Debian server with strict system administration requirements*
 
