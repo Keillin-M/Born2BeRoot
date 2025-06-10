@@ -24,7 +24,7 @@
 ```bash
 wget https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-11.x.x-amd64-netinst.iso
 ```
-2. VM Configuration (VirtualBox)
+### 2. VM Configuration (VirtualBox)
 Disk: 20GB (LVM)
 
 RAM: 2GB
@@ -33,24 +33,24 @@ CPU: 2 cores
 
 Network: NAT (port forward 4242 → 22)
 
-3. LVM Partitioning
+### 3. LVM Partitioning
 During installation:
 
-Select Manual partitioning
+- Select Manual partitioning
 
-Create:
+- Create:
 
-/boot ext4 (500MB)
+  - /boot ext4 (500MB)
 
-LVM volume group (remaining space)
+  - LVM volume group (remaining space)
 
-Logical volumes for:
+  - Logical volumes for:
 
-/ (10GB)
+    - / (10GB)
 
-/home (5GB)
+    - /home (5GB)
 
-swap (2GB)
+    - swap (2GB)
 ---
 ## 🔒 Security Setup
 Password Policy
