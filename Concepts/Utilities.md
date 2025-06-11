@@ -368,3 +368,47 @@ sudo aa-status         # Show AppArmor status
 sudo aa-enforce profile_name   # Enforce a specific profile
 sudo aa-disable profile_name   # Disable a specific profile
 ```
+## ⏰ cron
+
+- **What it means:**  
+`cron` comes from the Greek word *chronos*, meaning **time**.  
+It’s a built-in Linux service used to **schedule tasks** to run automatically at specific times or intervals.
+
+- **What it does:**  
+`cron` runs background jobs (called **cron jobs**) on a fixed schedule—like every day at midnight, every 5 minutes, or once a week.
+
+- **Where it's configured:**  
+Cron jobs are defined in a special file called a **crontab** (cron table).
+
+- **Edit your user’s crontab:**
+```bash
+crontab -e
+```
+View your current scheduled jobs:
+```bash
+crontab -l
+```
+- **🧠 Cron Syntax:**
+A cron job uses 5 time fields followed by the command:
+```bash
+*  *  *  *  *  command-to-run
+│  │  │  │  │
+│  │  │  │  └── Day of the week (0-7, Sunday=0 or 7)
+│  │  │  └───── Month (1-12)
+│  │  └──────── Day of the month (1-31)
+│  └─────────── Hour (0-23)
+└────────────── Minute (0-59)
+```
+- **📅 Example jobs:**
+```bash
+0 3 * * * /usr/bin/backup.sh
+# Runs every day at 3:00 AM
+
+*/10 * * * * /usr/bin/check_status.sh
+# Runs every 10 minutes
+
+0 0 * * 0 /usr/bin/cleanup.sh
+# Runs every Sunday at midnight
+```
+- **Why it's useful:**
+Automates tasks like backups, updates, monitoring scripts, and system maintenance — so you don’t have to remember to run them manually.
