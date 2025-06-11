@@ -1,0 +1,287 @@
+# Common Linux Utilities Explained
+
+## grep (Global Regular Expression Print)
+
+- **What it means:**  
+The name `grep` comes from the command used in the text editor ed: **g/re/p** which stands for *global / regular expression / print*. It means “search globally for a pattern and print the matching lines.”
+
+- **What it does:**  
+`grep` searches for text patterns (like words or phrases) inside files or input and shows you the matching lines.
+The `-v` option means **invert match**
+
+- **Simple example:**  
+```bash
+grep "apple" fruits.txt
+```
+This finds and prints all lines in fruits.txt that contain the word "apple".
+
+- **Why it's useful:**
+You can quickly search and filter text to find what you need.
+
+## grep -q
+
+- **What it means:**  
+The `-q` option means **quiet** or **silent** mode.
+
+- **What it does:**  
+`grep -q` searches for the pattern but **does not output anything**. It only sets the exit status:
+  - Exit status `0` means the pattern was found.  
+  - Exit status `1` means the pattern was not found.
+
+- **Simple example:**  
+```bash
+grep -q "apple" fruits.txt
+```
+This checks if "apple" is in fruits.txt without printing any result.
+
+- **Why it's useful:**
+Useful in scripts when you just want to check if a pattern exists without displaying the matching lines.
+
+## awk 
+- **What it means:**
+awk is named after its creators — Alfred Aho, Peter Weinberger, and Brian Kernighan.
+
+- **What it does:**
+awk is a powerful text-processing tool. It reads text line by line, splits it into fields (columns), and lets you select, format, or change parts of the text based on patterns.
+
+- **Simple example:**
+```bash
+awk '{print $1}' fruits.txt
+```
+This prints the first column (word) of each line from fruits.txt.
+
+- **Why it's useful:**
+Great for working with structured text like tables or logs where you want to extract or modify columns.
+
+## awk END
+
+- **What it means:**  
+`END` is a special pattern in `awk` that runs after processing all input lines.
+
+- **What it does:**  
+Commands inside the `END` block execute once after all lines have been read, useful for summary or final output.
+
+- **Simple example:**  
+```bash
+awk '{sum += $1} END {print "Total:", sum}' numbers.txt
+```
+This adds up the first column of all lines in numbers.txt and prints the total at the end.
+
+- ***Why it's useful:***
+Great for calculating totals, averages, or printing final results after processing data.
+
+## lscpu
+
+- **What it means:**  
+`lscpu` stands for **List CPU**. It shows detailed information about your computer’s CPU architecture.
+
+- **What it does:**  
+When you run `lscpu`, it displays details like the number of CPUs, cores, threads, CPU model, speed, and more.
+
+- **Simple example:**  
+```bash
+lscpu
+```
+This command outputs a summary of your CPU’s hardware info.
+
+- **Why it's useful:**
+It helps you quickly understand the processor specs of your system without digging through system files.
+
+## uname
+
+- **What it means:**  
+`uname` stands for **Unix Name**. It shows information about your operating system.
+
+- **What it does:**  
+Running `uname` prints details like the system name, kernel version, and machine hardware info.
+
+- **Simple example:**  
+```bash
+uname -a
+```
+This command shows all available system information in one line (kernel name, version, hostname, etc.).
+
+- **Why it's useful:**
+It’s a quick way to check which OS and kernel your system is running.
+
+## nproc
+
+- **What it means:**  
+`nproc` stands for **number of processors**.
+
+- **What it does:**  
+It shows how many CPU cores or processing units are available on your system.
+
+- **Simple example:**  
+```bash
+nproc
+```
+This command prints the number of CPU cores your system can use.
+
+- **Why it's useful:**
+Useful for scripts or programs that want to optimize performance by knowing how many processors are available.
+
+## free -m
+
+- **What it means:**  
+`free` shows memory usage, and the `-m` option displays the information in **megabytes**.
+
+- **What it does:**  
+It displays how much RAM and swap memory your system is using and how much is free.
+
+- **Simple example:**  
+```bash
+free -m
+```
+This prints memory usage in megabytes, making it easier to read.
+
+- **Why it's useful:**
+Helps you quickly check your system’s memory status and troubleshoot performance issues.
+
+## df
+
+- **What it means:**  
+`df` stands for **disk free**.
+
+- **What it does:**  
+It shows how much disk space is used and available on all mounted filesystems.
+
+- **Simple example:**  
+```bash
+df
+```
+This lists disk usage in blocks (default size).
+
+- **Why it's useful:**
+Helps you check disk space quickly.
+
+## df -BG
+- **What it means:**
+The -B option tells df to show sizes in blocks of a specified size, and G means gigabytes.
+
+- **What it does:**
+df -BG shows disk space usage with sizes rounded and labeled in gigabytes.
+
+- **Simple example:**
+```bash
+df -BG
+```
+his lists disk usage in gigabytes, making it easier to read and understand.
+
+- **Why it's useful:**
+Useful for a clear, human-readable view of disk space in GB.
+
+## top -bn1
+
+- **What it means:**  
+`top` is a command that shows real-time system processes.  
+The options `-b` and `-n1` modify its behavior:
+  - `-b` means **batch mode** (outputs data once instead of interactive mode).  
+  - `-n1` means **show only one iteration** (just one snapshot).
+
+- **What it does:**  
+`top -bn1` prints a single snapshot of the current running processes and system resource usage in a non-interactive way.
+
+- **Simple example:**  
+```bash
+top -bn1
+```
+This command outputs one snapshot of CPU, memory, and process info, then exits.
+
+- **Why it's useful:**
+Useful for scripts or logging when you want to capture system status once without opening the interactive top interface.
+
+## who -b
+
+- **What it means:**  
+`who` shows who is logged into the system.  
+The `-b` option means **boot time**.
+
+- **What it does:**  
+`who -b` displays the last time the system was rebooted (booted).
+
+- **Simple example:**  
+```bash
+who -b
+```
+This prints the system’s last boot time.
+
+- **Why it's useful:**
+Great for quickly checking when the system was last restarted.
+
+## ss -t
+
+- **What it means:**  
+`ss` stands for **socket statistics**.  
+The `-t` option tells it to show only **TCP** sockets.
+
+- **What it does:**  
+`ss -t` lists all current TCP network connections on your system.
+
+- **Simple example:**  
+```bash
+ss -t
+```
+This command shows active TCP connections, including info like source/destination IP and port.
+
+- **Why it's useful:**
+Helpful when you want to focus on TCP connections for monitoring or troubleshooting network issues.
+
+## lsblk
+
+- **What it means:**  
+`lsblk` stands for **list block devices**.
+
+- **What it does:**  
+It shows information about all available block devices (like hard drives, SSDs, USB drives) and their partitions in a tree-like format.
+
+- **Simple example:**  
+```bash
+lsblk
+```
+This command lists disks and their partitions, showing sizes, types, and mount points.
+
+- **Why it's useful:**
+Great for understanding your system’s storage layout and mounted drives.
+
+## wc -l and wc -w
+
+- **What it means:**  
+`wc` stands for **word count**.  
+- `-l` counts **lines**.  
+- `-w` counts **words**.
+
+- **What it does:**  
+- `wc -l` counts how many lines are in a file or input.  
+- `wc -w` counts how many words are in a file or input.
+
+- **Simple examples:**  
+```bash
+wc -l file.txt
+```
+Counts the number of lines in file.txt.
+```bash
+wc -w file.txt
+```
+Counts the number of words in file.txt.
+
+- **Why it's useful:**
+Quickly check the size of text by lines or words, useful in scripts or data analysis.
+
+## journalctl _COMM=sudo
+
+- **What it means:**  
+`journalctl` is a command to view system logs managed by `systemd`.  
+`_COMM=sudo` filters logs to show only entries where the command (`COMM`) is `sudo`.
+
+- **What it does:**  
+`journalctl _COMM=sudo` shows log entries related to the `sudo` command, like when users run commands with elevated privileges.
+
+- **Simple example:**  
+```bash
+journalctl _COMM=sudo
+```
+This command displays all logs generated by sudo.
+
+- **Why it's useful:**
+Great for auditing or troubleshooting to see who used sudo and what commands were run.
