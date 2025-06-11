@@ -1,6 +1,6 @@
-# Common Linux Utilities Explained
+# 🛠️ Common Linux Utilities Explained
 
-## grep (Global Regular Expression Print)
+## 🔍 grep (Global Regular Expression Print)
 
 - **What it means:**  
 The name `grep` comes from the command used in the text editor ed: **g/re/p** which stands for *global / regular expression / print*. It means “search globally for a pattern and print the matching lines.”
@@ -37,7 +37,7 @@ This checks if "apple" is in fruits.txt without printing any result.
 - **Why it's useful:**
 Useful in scripts when you just want to check if a pattern exists without displaying the matching lines.
 
-## awk 
+## 📊 awk 
 - **What it means:**
 awk is named after its creators — Alfred Aho, Peter Weinberger, and Brian Kernighan.
 
@@ -70,7 +70,7 @@ This adds up the first column of all lines in numbers.txt and prints the total a
 - ***Why it's useful:***
 Great for calculating totals, averages, or printing final results after processing data.
 
-## lscpu
+## 🖥️ lscpu
 
 - **What it means:**  
 `lscpu` stands for **List CPU**. It shows detailed information about your computer’s CPU architecture.
@@ -87,7 +87,7 @@ This command outputs a summary of your CPU’s hardware info.
 - **Why it's useful:**
 It helps you quickly understand the processor specs of your system without digging through system files.
 
-## uname
+## 🧩 uname
 
 - **What it means:**  
 `uname` stands for **Unix Name**. It shows information about your operating system.
@@ -104,7 +104,7 @@ This command shows all available system information in one line (kernel name, ve
 - **Why it's useful:**
 It’s a quick way to check which OS and kernel your system is running.
 
-## nproc
+## 🧮 nproc
 
 - **What it means:**  
 `nproc` stands for **number of processors**.
@@ -121,7 +121,7 @@ This command prints the number of CPU cores your system can use.
 - **Why it's useful:**
 Useful for scripts or programs that want to optimize performance by knowing how many processors are available.
 
-## free -m
+## 🧠 free -m
 
 - **What it means:**  
 `free` shows memory usage, and the `-m` option displays the information in **megabytes**.
@@ -138,7 +138,7 @@ This prints memory usage in megabytes, making it easier to read.
 - **Why it's useful:**
 Helps you quickly check your system’s memory status and troubleshoot performance issues.
 
-## df
+## 💾 df
 
 - **What it means:**  
 `df` stands for **disk free**.
@@ -171,7 +171,7 @@ his lists disk usage in gigabytes, making it easier to read and understand.
 - **Why it's useful:**
 Useful for a clear, human-readable view of disk space in GB.
 
-## top -bn1
+## 📈 top -bn1
 
 - **What it means:**  
 `top` is a command that shows real-time system processes.  
@@ -191,7 +191,7 @@ This command outputs one snapshot of CPU, memory, and process info, then exits.
 - **Why it's useful:**
 Useful for scripts or logging when you want to capture system status once without opening the interactive top interface.
 
-## who -b
+## 👥 who -b
 
 - **What it means:**  
 `who` shows who is logged into the system.  
@@ -209,7 +209,7 @@ This prints the system’s last boot time.
 - **Why it's useful:**
 Great for quickly checking when the system was last restarted.
 
-## ss -t
+## 🌐 ss -t
 
 - **What it means:**  
 `ss` stands for **socket statistics**.  
@@ -227,7 +227,7 @@ This command shows active TCP connections, including info like source/destinatio
 - **Why it's useful:**
 Helpful when you want to focus on TCP connections for monitoring or troubleshooting network issues.
 
-## lsblk
+## 🗂️ lsblk
 
 - **What it means:**  
 `lsblk` stands for **list block devices**.
@@ -244,7 +244,7 @@ This command lists disks and their partitions, showing sizes, types, and mount p
 - **Why it's useful:**
 Great for understanding your system’s storage layout and mounted drives.
 
-## wc -l and wc -w
+## 🔢 wc -l and wc -w
 
 - **What it means:**  
 `wc` stands for **word count**.  
@@ -268,7 +268,7 @@ Counts the number of words in file.txt.
 - **Why it's useful:**
 Quickly check the size of text by lines or words, useful in scripts or data analysis.
 
-## journalctl _COMM=sudo
+## 📜 journalctl _COMM=sudo
 
 - **What it means:**  
 `journalctl` is a command to view system logs managed by `systemd`.  
