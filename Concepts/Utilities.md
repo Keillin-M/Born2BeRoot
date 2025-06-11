@@ -302,3 +302,69 @@ This sends the message "System maintenance in 5 minutes" to every user currently
 
 - **Why it's useful:**
 Great for broadcasting important announcements or alerts to all users at once.
+
+## 📦 apt
+
+- **What it means:**  
+`apt` stands for **Advanced Package Tool**.
+
+- **What it does:**  
+`apt` is a command-line tool used on Debian-based systems to **install**, **update**, and **remove** software packages.
+
+- **Simple examples:**
+```bash
+sudo apt update         # Refreshes the list of available packages
+sudo apt install nginx  # Installs the nginx web server
+sudo apt remove nginx   # Uninstalls nginx
+```
+- **Why it's useful:**
+apt simplifies software management by handling dependencies and pulling packages from trusted repositories.
+
+- **Where it's used:**
+Debian, Ubuntu, Linux Mint, and other Debian-based systems.
+
+## 🆚 Difference: apt vs aptitude
+- **apt:**
+
+- Default package manager on Debian-based systems.
+- Lightweight, fast, and widely used in scripts and terminals.
+- Comes pre-installed in most systems.
+
+- **aptitude:**
+- A more advanced, interactive package manager.
+- Can be used in text-based GUI mode or via command line.
+- Better at resolving complex dependencies automatically.
+- Not installed by default — must be installed manually:
+```bash
+sudo apt install aptitude
+```
+- **When to use which?**
+- Use apt for everyday tasks — it's simple and quick.
+- Use aptitude if you're dealing with tricky dependency issues or prefer a menu-style interface in the terminal.
+
+## 🔐 AppArmor
+
+- **What it means:**  
+**AppArmor** stands for **Application Armor**.
+
+- **What it does:**  
+AppArmor is a Linux **security module** that controls what programs can do by enforcing **per-application access rules**. It uses profiles to restrict how a program can interact with files, networks, and other system resources.
+
+- **Simple example:**
+AppArmor can restrict a web server so it:
+- Can read `/var/www/`
+- Cannot access `/home/user/` or `/etc/shadow`
+
+- **Why it's useful:**  
+Even if a program is exploited, AppArmor can **limit the damage** it can do. It's a form of **mandatory access control (MAC)**, adding another layer of security on top of traditional file permissions.
+
+- **Where it's used:**  
+- Commonly used in **Ubuntu**, **Debian**, and **openSUSE**.
+- Helps protect services like `nginx`, `mysql`, `snap`, and more.
+
+- **Commands to manage AppArmor:**
+```bash
+sudo aa-status         # Show AppArmor status
+sudo aa-enforce profile_name   # Enforce a specific profile
+sudo aa-disable profile_name   # Disable a specific profile
+```
