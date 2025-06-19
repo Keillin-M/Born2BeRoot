@@ -50,8 +50,9 @@ Cryptographic network protocol.
 - Encrypted data transfer
 Check SSH 4242 created: /etc/ssh/ssh_config
 You should be able to connect to your VM through the Terminal
+```bash
 $ ssh (user)@localhost -p 8080 (or the Port you have)
-
+```
 ## LVM (Logical Volume Manager)
 Tool that lets you manage disk space more flexibly, instead of using physical disks and partitions directly.
 Ex: grow, shrink and combine storage easily.
@@ -62,14 +63,16 @@ Check the password policy created.
 
 ## sudo
 Check sudo requirements created.
+```bash
 $ sudo visudo
+```
 
 ## Script
 Check script created.
 /usr/local/bin/monitoring.sh
 
 # Commands
-
+```bash
 $ lsblk → check partitions
 $ sudo aa-status → AppArmor status
 $ getent group (group name)
@@ -80,28 +83,35 @@ $ sudo ufw status → UFW status
 $ which sudo → if sudo properly installed
 $ sudo crontab -e → edit cron schedule (to stop cron, comment the rule using #, avoid using command cron stop)
 $ head -n 2 /etc/os-release → check Debian and version
-
+```
 ## Change password
+```bash
 $ passwd
 $ sudo passwd
-
+```
 ## Change hostname
+```bash
 $ sudo nano /etc/hostname
 $ sudo reboot
-
+```
 ## UFW
+```bash
 $ sudo ufw allow 8080
 $ sudo ufw status
-
+```
 delete
+```bash
 $ sudo ufw status numbered
 $ sudo ufw delete (number)
-
+```
 ## Create user/group
+```bash
 $ sudo adduser (name)
 $ sudo addgroup (group name)
 $ sudo adduser (name) (group name)
-
+```
 delete
+```bash
 $ sudo userdel (user)
 $ sudo groupdel (group name)
+```
