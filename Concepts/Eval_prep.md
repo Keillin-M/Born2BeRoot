@@ -13,9 +13,9 @@ crontab -e: edit
 crontab -l: current jobs
 ```c
 * * * * * /path/to/task
-*#(minute)# *#(hour)# *#(day)# *#(month)# *#(day of the week)#
-*/10 * * * * /path/to/task #(runs every 10 minutes)
-0 3 * * * /path/to/task #(every day at 3 AM)
+*(minute) *(hour) *(day) *(month) *(day of the week)
+*/10 * * * * /path/to/task (runs every 10 minutes)
+0 3 * * * /path/to/task (every day at 3 AM)
 ```
 ## Virtual Mahcine
 It's an emulated computer system created using virtualization software. Allows you to run multiple operating systems on one physical machine, each with it's own CPU, memory, storage and operating system. 
