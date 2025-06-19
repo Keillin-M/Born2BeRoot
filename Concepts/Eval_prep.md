@@ -11,11 +11,12 @@ Is a security module that controls programs by enforcing per-application access 
 Schedule tasks to run automatically ar specific times or intervals.
 crontab -e: edit
 crontab -l: current jobs
+```c
 * * * * * /path/to/task
-*(minute) *(hour) *(day) *(month) *(day of the week)
-ex: */10 * * * * /path/to/task (runs every 10 minutes)
-    0 3 * * * /path/to/task (every day at 3 AM)
-
+*#(minute)# *#(hour)# *#(day)# *#(month)# *#(day of the week)#
+*/10 * * * * /path/to/task #(runs every 10 minutes)
+0 3 * * * /path/to/task #(every day at 3 AM)
+```
 ## Virtual Mahcine
 It's an emulated computer system created using virtualization software. Allows you to run multiple operating systems on one physical machine, each with it's own CPU, memory, storage and operating system. 
 Ex: Used to test programs in a safe environment or a programs that requeires a different operating system that you have installed in your physical machine.
