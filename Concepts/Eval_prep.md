@@ -81,7 +81,7 @@ $ groups → lists all groups of the user
 $ sudo service ssh status → SSH status
 $ sudo ufw status → UFW status
 $ which sudo → if sudo properly installed
-$ sudo crontab -e → edit cron schedule (to stop cron, comment the rule using #, avoid using command cron stop)
+$ sudo crontab -e → edit cron schedule (to stop cron, comment the rule using '#', avoid using command cron stop)
 $ head -n 2 /etc/os-release → check Debian and version
 ```
 ## Change password
