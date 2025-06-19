@@ -73,16 +73,16 @@ Check script created.
 
 # Commands
 ```bash
-$ lsblk → check partitions
-$ sudo aa-status → AppArmor status
+$ lsblk # → check partitions
+$ sudo aa-status # → AppArmor status
 $ getent group (group name)
-$ cat /etc/group → lists all groups
-$ groups → lists all groups of the user
-$ sudo service ssh status → SSH status
-$ sudo ufw status → UFW status
-$ which sudo → if sudo properly installed
-$ sudo crontab -e → edit cron schedule (to stop cron, comment the rule using '#', avoid using command cron stop)
-$ head -n 2 /etc/os-release → check Debian and version
+$ cat /etc/group # → lists all groups
+$ groups # → lists all groups of the user
+$ sudo service ssh status # → SSH status
+$ sudo ufw status # → UFW status
+$ which sudo # → if sudo properly installed
+$ sudo crontab -e # → edit cron schedule (to stop cron, comment the rule using '#', avoid using command cron stop)
+$ head -n 2 /etc/os-release # → check Debian and version
 ```
 ## Change password
 ```bash
